@@ -58,7 +58,7 @@
         <h4 class="heading">Health Status</h4>
 
             <div class="fancy-icon-wrapper">
-
+            
             <span class="fa-layers fa-fw" style="display: block; margin-bottom: 3rem;">
               <i class="fa fa-circle" data-fa-transform="grow-8"></i>
               <i class="green1 fa fa-smile"></i>
@@ -125,12 +125,12 @@
 <script>
 var ctx = document.getElementById("myChart").getContext('2d');
 var myChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'horizontalBar',
     data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: ["Saturday", "Friday", "Thursday", "Wednesday", "Tuesday", "Monday", "Sunday"],
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            label: 'Forager Total',
+            data: [2500, 3000, 2700, 2800, 2650, 2400, 2500],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',

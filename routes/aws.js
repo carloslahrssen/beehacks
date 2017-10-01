@@ -8,11 +8,11 @@ var db = new AWS.DynamoDB.DocumentClient();
 
 router.get('/table-list', function(req, res, next) {
     
-    var para={
-        TableName:"dummyTemp"
-    }
-    console.log("Scanning Temperature");
-    db.scan(para, );
+//    var para={
+//        TableName:"dummyTemp"
+//    }
+//    console.log("Scanning Temperature");
+//    db.scan(para, );
     
     
     var params={
