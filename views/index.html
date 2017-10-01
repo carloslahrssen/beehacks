@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bee Tracker</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">  
+
+</head>
+
+<body>
+
+        <div id="header" class="center-me">
+            <div id="logo-animate-wrapper">
+              <img src="https://maxcdn.icons8.com/Share/icon/Animals//bee1600.png" alt="Bee Tracker" width="150" height="150" />
+            </div>
+        </div>
+
+        <div class="dash-title-wrapper">
+            <h1 class="dash-title heading"><strong>Bee</strong><span class="grey-fade">utiful</span> Dashboard</h1>
+        </div>
+        
+
+            <div id="nav">
+                <div class="nav-wrap">
+                    
+                    <div class="date-wrapper">
+                        <div id='todays-date'></div>
+                </div>
+            
+                </div>
+            </div>
+ 
+
+
+<div id="content">
+
+
+    <div class="article column1 center-me">
+        <h4 class="heading">Temperature</h4>
+         
+         <div class="fancy-icon-wrapper">
+
+            <span class="fa-layers fa-fw" style="display: block; margin-bottom: 3rem;">
+              <i class="fa fa-circle" data-fa-transform="grow-8"></i>
+              <i class="green1 fa fa-thermometer-three-quarters"></i>
+            </span>
+        
+        </div>
+            <span class="fancy-info">75</span> <span class="weather-style fancy-info">&#8457;</span>
+
+    </div>
+
+
+    <div class="article column2 center-me">
+        <h4 class="heading">Health Status</h4>
+
+            <div class="fancy-icon-wrapper">
+
+            <span class="fa-layers fa-fw" style="display: block; margin-bottom: 3rem;">
+              <i class="fa fa-circle" data-fa-transform="grow-8"></i>
+              <i class="green1 fa fa-smile"></i>
+            </span>
+        
+        </div>
+        <span class="fancy-info">Good</span>
+    </div>
+
+
+    <div class="article column3 center-me">
+        <h4 class="heading">Last Forager Count</h4>
+
+        
+             <div class="fancy-icon-wrapper">
+
+                <span class="fa-layers fa-fw" style="display: block; margin-bottom: 3rem;">
+                  <i class="fa fa-circle" data-fa-transform="grow-8"></i>
+                  <i class="green1 fa fa-hexagon"></i>
+                </span>
+        
+            </div>
+        
+        
+        <span class="fancy-info">1650</span>
+    </div>
+
+
+
+    <div class="feature-block clearBoth">
+    <h3 class="heading center-me">Data Details</h3>
+            <div class="chart-container center-me">
+                 <p>Make Chart HERE</p>
+            </div>
+    </div>
+
+    <div id="feature">
+    <h3 class="heading center-me">Overview</h3>
+            <div class="chart-container">
+                 <canvas id="myChart"></canvas>
+            </div>
+    </div>
+
+
+</div>
+
+
+
+<div id="footer" class="center-me">
+    <p>&copy; Copyright 2017</p>
+</div>
+
+
+<!-- LOAD SCRIPTS  -->
+
+    <script src="javascripts/scripts.js"></script>
+            <script defer src="FontAwesomeJs/packs/solid.js"></script> 
+           <script defer src="FontAwesomeJs/fontawesome.js"></script>
+    
+    <!-- Chart JS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
+
+
+<script>
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
+    
+    <!-- More  -->
+    
+
+</body>
+</html>
+
+
+    
+
+
