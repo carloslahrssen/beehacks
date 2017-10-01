@@ -7,6 +7,11 @@
 var app = require('../app');
 var debug = require('debug')('beehacks:server');
 var http = require('http');
+var socketio = require("socket.io");
+var rabbit = require('../rabbit');
+
+console.log('Starting Server');
+
 
 /**
  * Get port from environment and store in Express.
@@ -20,6 +25,23 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
+var io = socketio(server);
+
+rabbit.on('ready', () => {
+    console.log('Connected to RabbitMQ');
+    io.on('connection', socket => {
+        console.log('Connected to Socket.io');
+        socket.emit('connected', 'connected');
+        rabbit.queue('emails', {exclusive: true}, q => {
+            q.bind('blink','#');      
+            q.subscribe(data => {
+                console.log('recieving data', data);
+                socket.emit('sensor', data);
+            })
+        }) 
+    });
+})
+
 
 /**
  * Listen on provided port, on all network interfaces.
